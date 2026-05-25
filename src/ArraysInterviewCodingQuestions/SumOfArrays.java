@@ -16,10 +16,6 @@ public class SumOfArrays {
 
 		//System.out.println(sum);
 		
-		Integer l1 = Arrays.stream(arr).boxed().mapToInt(Integer::intValue).sum();
-		
-		long l2 = Arrays.stream(arr).sum();
-		
 		IntSummaryStatistics l3 = Arrays.stream(arr).summaryStatistics();
 		
 		System.out.println(l3.getCount());
@@ -28,7 +24,7 @@ public class SumOfArrays {
 		
 		System.out.println(l3.getAverage());
 		
-		//System.out.println(l2);
+		System.out.println(l3.getSum() );
 		
 		//System.out.println(l1);
 	}

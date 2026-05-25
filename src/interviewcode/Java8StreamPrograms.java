@@ -1,20 +1,15 @@
 package interviewcode;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
+import java.util.stream.*;
+
 
 public class Java8StreamPrograms {
 
 	@SuppressWarnings("unused")
 	
 	public static void main(String[] args) {
-		List<Student> studentList = Stream.of(
+		List<Student> studentList = Arrays.asList(
 				new Student(1, "Rohit", 30, "Male", "Mechanical Engineering", "Mumbai", 122,
 						Arrays.asList("+912632632782", "+1673434729929")),
 				new Student(2, "Pulkit", 74, "Male", "Computer Engineering", "Delhi", 67,
@@ -34,8 +29,7 @@ public class Java8StreamPrograms {
 				new Student(9, "Sonu", 27, "Female", "Computer Engineering", "Karnataka", 7,
 						Arrays.asList("+9126398932782", "+16563434729929", "+5673434729929")),
 				new Student(10, "Shubham", 26, "Male", "Instrumentation Engineering", "Mumbai", 98,
-						Arrays.asList("+912632646482", "+16734323229929")))
-				.collect(Collectors.toList());
+						Arrays.asList("+912632646482", "+16734323229929")));
 		
 		Set<Integer> n1= new HashSet<Integer>();
 		
@@ -45,9 +39,29 @@ public class Java8StreamPrograms {
 	
 	Map<Integer, String> l3 = studentList.stream().collect(Collectors.toMap(Student::getId, Student::getFirstName));
 	
-	System.out.println(l3);
+	List<Student> map=studentList.stream().filter(s->s.getCity().equals("Mumbai")).collect(Collectors.toList());
 	
-	//System.out.println(l3);
-	//System.out.println(l1);
+	List<Student> map1 = studentList.stream().filter(s->s.getDept().equals("Mechanical Engineering") && s.getAge()>=25).collect(Collectors.toList());
+	
+	List<Student> l4 = studentList.stream().sorted(Comparator.comparing(Student::getFirstName).thenComparing(Student::getAge)).collect(Collectors.toList());
+			
+	//System.out.println(l4);
+	
+	Student l5 = studentList.stream().sorted(Comparator.comparing(Student::getAge).reversed()).skip(1).findFirst().get();
+	
+	List<Student> l6 = studentList.stream().filter(a-> a.getDept().equals("Mechanical Engineering") && a.getAge() >20).collect(Collectors.toList());
+	
+	System.out.println(l6);
+	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

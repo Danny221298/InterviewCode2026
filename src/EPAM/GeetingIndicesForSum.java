@@ -1,4 +1,4 @@
-package ArraysInterviewCodingQuestions;
+package EPAM;
 
 import java.util.*;
 
@@ -12,14 +12,13 @@ public class GeetingIndicesForSum {
 		
 		int[] result = findindice(arr1, target);
 		
-		System.out.println(result[0]);
-		System.out.println(result[1]);
+		System.out.print(result[0]);
+		System.out.print(result[1]);
 	}
 	
 	static int[] findindice(int [] arr2 , int target) {
 		
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		
 		for(int i =0 ; i<arr2.length;i++) {
 			int require = target -arr2[i];
 			if(map.containsKey(require)) {

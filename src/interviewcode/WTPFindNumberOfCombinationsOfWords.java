@@ -21,7 +21,7 @@ public class WTPFindNumberOfCombinationsOfWords {
 
 	public static void main(String[] args) {
 
-		String s ="ABCD";
+		String s ="ABCDE";
 		printPermutn(s,  "");
 	}
 } 

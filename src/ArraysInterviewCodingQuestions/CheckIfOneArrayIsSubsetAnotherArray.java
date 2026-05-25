@@ -28,7 +28,7 @@ public class CheckIfOneArrayIsSubsetAnotherArray {
 		int n = a2.length;
 		int o = a3.length;
 
-		boolean status = subsetFind(a1, a2, m, n);
+		boolean status = subsetFind(a2, a3, n,o);
 
 		System.out.println(status);
 

@@ -11,7 +11,7 @@ public class AdditionOfIntNumber {
 		while(num!=0) {
 			
 			int rem = num%10;
-			sum=sum+rem*10;
+			sum=sum+rem;
 			num=num/10;
 		}
 		

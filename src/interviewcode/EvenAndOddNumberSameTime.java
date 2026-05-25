@@ -15,7 +15,6 @@ public class EvenAndOddNumberSameTime {
 		
 		List<Integer> even = l1.get(true);
 		List<Integer> odd = l1.get(false);
-		
 		System.out.println(even);
 		System.out.println(odd);
 	}

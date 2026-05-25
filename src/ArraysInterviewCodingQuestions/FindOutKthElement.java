@@ -26,7 +26,7 @@ public class FindOutKthElement {
 		
 		 long k = 3;
 		 
-		 Integer l1 = Arrays.stream(a1).boxed().sorted(Comparator.naturalOrder()).skip(k -1).findFirst().get();
+		 Integer l1 = Arrays.stream(a1).boxed().sorted().skip(k -1).findFirst().get();
 		 
 		 System.out.println(l1);
 	}

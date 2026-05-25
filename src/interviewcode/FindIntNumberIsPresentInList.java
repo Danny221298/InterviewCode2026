@@ -1,4 +1,4 @@
-package interviewcode;
+ package interviewcode;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -21,6 +21,11 @@ public class FindIntNumberIsPresentInList {
 		boolean s1 = Arrays.stream(a1).anyMatch(num -> num == a);
 
 		System.out.println(s1);
+		
+		if(s1) {
+			
+			System.out.println(a);
+		}
 
 		// Check if all number are divisble by 5
 

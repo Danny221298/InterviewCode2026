@@ -1,4 +1,4 @@
-package interviewcode;
+package EPAM;
 
 import java.util.*;
 import java.util.stream.Collectors;

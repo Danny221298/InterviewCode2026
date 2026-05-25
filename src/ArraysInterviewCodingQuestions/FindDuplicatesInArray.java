@@ -16,17 +16,12 @@ public class FindDuplicatesInArray {
 		int a1[] = { 23, 21, 46, 43, 45 ,45,43};
 
 		Set<Integer> s1Integers = new HashSet<Integer>();
-
-		List<Integer> l1Integers = Arrays.stream(a1).boxed().
-				peek(n-> System.out.println("Original" + n))
-				.filter(a -> !s1Integers.add(a)).collect(Collectors.toList());
 		
 		List<Integer> I1 = Arrays.stream(a1).boxed().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet()
 				.stream().filter(a->a.getValue()>1).map(Map.Entry::getKey).collect(Collectors.toList());
 		
 		System.out.println(I1);
 
-		System.out.println("Using peek :" +l1Integers);
 
 		Integer l2Integers = Arrays.stream(a1).boxed().sorted(Comparator.reverseOrder()).findFirst().get();
 
